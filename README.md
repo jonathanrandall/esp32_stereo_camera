@@ -1,6 +1,10 @@
 # esp32_stereo_camera
  stereo camera files for esp32
 
+Youtube video at:
+https://youtu.be/CAVYHlFGpaw 
+
+
 The code implements the stereo camera for object detection, labelling and distance estimation with the esp32.
 
 The notebooks are:
