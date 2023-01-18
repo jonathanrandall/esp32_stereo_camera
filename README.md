@@ -14,8 +14,9 @@ If you want to use any stream handler from another sketch with python, you need 
 
 Find the following code in the stream handler:
 
+  ```
   if(res == ESP_OK){  
-        \tsize_t hlen = snprintf((char *)part_buf, 64, _STREAM_PART, _jpg_buf_len);      
+        size_t hlen = snprintf((char *)part_buf, 64, _STREAM_PART, _jpg_buf_len);      
         res = httpd_resp_send_chunk(req, (const char *)part_buf, hlen);      
     }
     if(res == ESP_OK){
@@ -24,10 +25,11 @@ Find the following code in the stream handler:
     if(res == ESP_OK){
         res = httpd_resp_send_chunk(req, _STREAM_BOUNDARY, strlen(_STREAM_BOUNDARY));
     }
-    
+    ```
     
 And copy the bottom statement (_STREAM_BOUNDAEY) to the top:
-
+  ```
+  ```
    if(res == ESP_OK){
         res = httpd_resp_send_chunk(req, _STREAM_BOUNDARY, strlen(_STREAM_BOUNDARY));
     }
@@ -38,7 +40,6 @@ And copy the bottom statement (_STREAM_BOUNDAEY) to the top:
     if(res == ESP_OK){
         res = httpd_resp_send_chunk(req, (const char *)_jpg_buf, _jpg_buf_len);
     }
-    
-    
+  ```    
     
 
